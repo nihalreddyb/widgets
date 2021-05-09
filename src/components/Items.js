@@ -10,15 +10,12 @@ const Items  = ({items}) => {
     }
     const renderedItems = items.map((item, index) => {
 
-        const isActive = activeIndex === index ? 'active' : '';
-
-        return <Item key={item.id} item={item} setSelectedIndex={() => onItemClick(index)} active={isActive}></Item>
+        return <Item key={item.id} item={item} index={index} setSelectedIndex={() => onItemClick(index)} activeIndex={activeIndex}></Item>
     })
 
     return (
         <div className="ui styled accordion">
             {renderedItems}
-            <h4>{activeIndex}</h4>
         </div>
     )
 }

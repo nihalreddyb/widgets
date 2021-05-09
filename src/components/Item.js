@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Item = ({item, setSelectedIndex, isActive}) => {
+const Item = ({index, item, setSelectedIndex, activeIndex}) => {
 
     const onItemClick = () => {
         setSelectedIndex();
     }
+
+    const isActive = activeIndex === index ? 'active' : '';
+
     return (
         <React.Fragment>
             <div className={`title ${isActive}`} onClick={() => onItemClick()}>
